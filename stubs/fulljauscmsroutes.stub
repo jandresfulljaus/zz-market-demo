@@ -1,0 +1,10 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::middleware(['auth'])
+    ->prefix({{ modulename }})
+    ->namespace('Modules\{{ modulename }}\Controllers')
+    ->group(function () {
+    // {{ agregar }}
+});

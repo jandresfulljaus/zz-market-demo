@@ -1,0 +1,61 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Http\Request;
+use Main\Admin\Controllers\BaseController;
+use {{ model }};
+
+class {{ class }}Controller extends BaseController
+{
+    protected $model = {{ class }}::class;
+    protected $model_titles = [
+        'singular' => '{{ singular }}',
+        'plural' => '{{ plural }}',
+    ];
+
+    protected $validation_fields = ['name' => 'required'];
+    protected $message_fields = [];
+    protected $names_fields = ['name' => 'Nombre'];
+
+    protected $routes = [
+        'list' => '{{ routelist }}',
+        'create' => '{{ routecreate }}',
+        'edit' => '{{ routeedit }}',
+        'editurl' => 'editar/{{ singularminuscula }}/',
+        'save' => '{{ routesave }}',
+        'delete' => '{{ routedelete }}',
+        'getdata' => '{{ routegetdata }}',
+        'sort' => '{{ routesort }}',
+        'sheet' => '{{ routesheet }}'
+    ];
+
+    protected $view_main = '{{ viewmain }}';
+    protected $view_edit = '{{ viewedit }}';
+
+    protected $paginate = 20;
+
+    protected $showExportBtn = false;
+
+    public function save(Request $request)
+    {
+        $this->validateFields($request);
+
+        if ($request->filled('id')) {
+            $data = $this->validateData($request);
+        } else {
+            $data = new {{ modelname }}();
+        }
+
+        $this->processCommonFields($request, $data);
+
+        $data->name = $request->name;
+
+        return parent::store($data);
+    }
+
+    public function sheet()
+    {
+        return false;
+    }
+}

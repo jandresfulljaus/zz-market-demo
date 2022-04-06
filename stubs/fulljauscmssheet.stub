@@ -1,0 +1,27 @@
+<?php
+
+namespace {{ namespace }};
+
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use {{ model }};
+
+class {{ class }}Sheet implements FromCollection, WithHeadings
+{
+    public function __construct()
+    {
+        //
+    }
+
+    public function collection()
+    {
+        $data =  {{ class }}::getdata()->get();
+
+        return $data;
+    }
+
+    public function headings(): array
+    {
+        //
+    }
+}

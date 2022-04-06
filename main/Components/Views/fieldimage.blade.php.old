@@ -1,0 +1,7 @@
+<div class="form-group row">
+	<label class="col-lg-2 col-form-label font-weight-semibold">{{ $label }}</label>
+	<div class="col-lg-10">
+	<input type="text" id="img_{{ $uniqid }}" name="{{ $name }}" class="fieldimage" value="{{ $value }}" >
+		<button id="{{ $uniqid }}" class="btn btn-primary fieldimage_button" value="Seleccionar Imagen">
+	</div>
+</div>

@@ -1,0 +1,50 @@
+ 
+Acciones de Base de datos
+=========================
+- Modifique la estructura de la base de datos en el archivo de migración:
+/var/www/modules/Products/Database/Migrations/2022_04_06_000000_create_products_products_table.php
+
+- Rellene la semilla:
+/var/www/modules/Products/Database/Seeders/ProductsSeeder.php
+
+
+
+- Ya puedes probar si la migración y la semilla funcionan:
+Ejecute:
+ composer dump-autoload
+luego: 
+ @php artisan migrate:fresh --seed 
+para obtener una base de datos inicial.
+
+
+Acciones en el Módulo
+=====================
+- Edite el array $fillable. en el archivo del modelo de datos:
+    * Modifique la consulta getdata e incluya sus propias consultas relacionadas:
+/var/www/modules/Products/Models/Product.php
+
+- Edite el Controlador del modelo de datos:
+/var/www/modules/Products/Controllers/ProductController.php
+
+- Complete el formulario de edición/inserción de registros:
+/var/www/modules/Products/Views/products/edit.blade.php
+
+- Puede mejorar el listado de registros o agregar una nueva vista principal:
+/var/www/modules/Products/Views/products/list.blade.php
+
+
+- Agrega al sidebar menu la opción para administrar este modelo
+<li><a href="{{ route('products.products.list')}}"><i class="material-icons">assignment_ind</i><p>Productos</p></a></li>
+
+- Edite el archivo routes.php del módulo y agregue:
+// Products - Product
+Route::get('/productos', 'ProductController@index')->name('products.products.list');
+Route::get('/nuevo/producto', 'ProductController@create')->name('products.products.create');
+Route::post('/ordenar/productos', 'ProductController@sorting')->name('products.products.sort');
+Route::get('/editar/producto/{id}', 'ProductController@edit')->name('products.products.edit');
+Route::post('/eliminar/producto', 'ProductController@delete')->name('products.products.delete');
+Route::post('/guardar/producto', 'ProductController@save')->name('products.products.save');
+Route::post('/obtener/productos', 'ProductController@getdata')->name('products.products.getdata');
+Route::get('/exportar/productos', 'ProductController@sheet')->name('products.products.sheet');
+ 
+

@@ -1,0 +1,2 @@
+Requiera 'modules/Products/routes.php' en 'routes/fulljauscms.php':
+require base_path('modules/Products/routes.php');

@@ -1,0 +1,201 @@
+:root {
+    --hover-color: #29384c;
+    --primary-color: #9c27b0;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --default-color: #999999;
+    --title-color: #2a2c2f;
+    --description-color: #b2b4b6;
+    --lower-border-color: #e3e5e5;
+    --lower-section-color: #fafafa;
+    --lower-title-color: #afb3b9;
+    --lower-description-color: #656464;
+}
+
+.ticket-link {
+    text-decoration: none;
+}
+
+.ticket-container {
+    position: relative;
+    width: 100%;
+    margin: 25px 0;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    color: rgba(0, 0, 0, 0.87);
+    background-color: white;
+    border-radius: 6px;
+    border: 2px solid #e3e3e3;
+}
+
+.ticket-container:hover {
+    border: 2px solid var(--hover-color);
+}
+
+.ticket-content-block {
+    display: block;
+}
+
+.ticket-tag {
+    text-transform: uppercase;
+    padding: 6px 20px 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.ticket-tag-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.ticket-tag-warning {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.ticket-tag-warning-grad {
+    color: white;
+    background-image: linear-gradient(
+        to right,
+        var(--primary-color), var(--warning-color), var(--primary-color)
+    );
+}
+
+.ticket-tag-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.ticket-tag-default {
+    background-color: var(--default-color);
+    color: white;
+}
+
+.ticket-tag-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ticket-tag-default-grad {
+    color: white;
+    background-image: linear-gradient(
+        to right,
+        var(--primary-color), var(--default-color), var(--primary-color)
+    );
+}
+
+.ticket-problem-title {
+    margin: 8px 0 8px;
+    font-weight: bold;
+    color: var(--title-color);
+}
+
+.ticket-problem-description {
+    color: var(--description-color);
+    font-weight: bold;
+}
+
+.ticket-info-title {
+    margin: 4px 0 4px;
+    color: var(--lower-title-color);
+    font-size: small;
+    font-weight: bold;
+}
+
+.ticket-info-description {
+    margin: 4px 0 4px;
+    color: var(--lower-description-color);
+    font-size: small;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .ticket-upper-section {
+        display: block;
+    }
+
+    .ticket-upper-section > div:nth-child(2) {
+        box-sizing: border-box;
+        padding: 10px 0 0 10px;
+    }
+
+    .ticket-lower-section {
+        display: block;
+        border-radius: 0 0 6px 6px;
+        border-top: 2px solid var(--lower-border-color);
+        background-color: var(--lower-section-color);
+    }
+
+    .ticket-lower-section .ticket-content-block {
+        border-bottom: 2px solid var(--lower-border-color);
+    }
+
+    .ticket-lower-section .ticket-content-block:last-child {
+        border-bottom: none;
+    }
+
+    .ticket-lower-section > div {
+        box-sizing: border-box;
+        padding: 0 10px 0;
+    }
+
+    .ticket-number {
+        padding: 10px 0 0 35px;
+        font-size: smaller;
+        font-style: italic;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    .ticket-upper-section {
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+    }
+
+    .ticket-upper-section > div {
+        box-sizing: border-box;
+        margin: 5px 20px 0 0;
+    }
+
+    .ticket-upper-section > div:first-child {
+        min-width: 100px;
+    }
+
+    .ticket-lower-section {
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        border-radius: 0 0 6px 6px;
+        border-top: 2px solid var(--lower-border-color);
+        background-color: var(--lower-section-color);
+    }
+
+    .ticket-lower-section .ticket-content-block:first-child {
+        border-left: none;
+    }
+
+    .ticket-lower-section .ticket-content-block {
+        border-left: 2px solid var(--lower-border-color);
+    }
+
+    .ticket-lower-section .ticket-content-block:last-child {
+        border-right: none;
+    }
+
+    .ticket-lower-section > div {
+        box-sizing: border-box;
+        padding: 0 15px 0;
+    }
+
+    .ticket-number {
+        padding: 1px 20px;
+        text-align: center;
+        font-size: smaller;
+        font-style: italic;
+    }
+}

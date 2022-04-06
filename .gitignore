@@ -1,0 +1,4 @@
+vendor/
+storage/logs/laravel.log
+docker/phpmyadmin/
+.env
