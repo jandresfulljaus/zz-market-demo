@@ -10,8 +10,9 @@ class ProductController extends BaseController
 {
     protected $model = Product::class;
     protected $model_titles = [
-        'singular' => 'Producto',
-        'plural' => 'Productos',
+        'es' => ['singular' => 'Producto', 'plural' => 'Productos'],
+        'en' => ['singular' => 'Product', 'plural' => 'Products'],
+        'pt' => ['singular' => 'Produto', 'plural' => 'Produtos'],
     ];
 
     protected $validation_fields = ['name' => 'required'];

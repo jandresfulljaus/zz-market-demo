@@ -18,7 +18,7 @@ class CreateProductsProductsTable extends Migration
             $table->string('end date', 255)->nullable(true);
             $table->boolean('published')->default(0);
             $table->string('currency', 3);
-            $table->decimal('price', 10, 2);
+            $table->decimal('price', 20, 2);
             $table->decimal('aliquot', 3, 2);
             $table->string('weight', 255)->nullable(true);
             $table->string('heigth', 255)->nullable(true);
