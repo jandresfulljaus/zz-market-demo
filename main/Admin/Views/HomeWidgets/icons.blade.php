@@ -10,7 +10,7 @@ use Main\Auth\Models\Role;
         }
     $icons = [
         [
-            "route" => 'products.products.list',
+            "route" => '',
             "params" => Str::contains(auth()->user()->email, ',') ? 0 : null,
             "icon" => "icon-store2",
             "color" => "bg-secondary",
@@ -18,7 +18,7 @@ use Main\Auth\Models\Role;
             "button" => __('messages.seeMoreOrders'),
         ],
         [
-            "route" => 'orders.orders.list',
+            "route" => '',
             "params" => null,
             "icon" => "icon-pencil7",
             "color" => "bg-secondary",
@@ -26,7 +26,7 @@ use Main\Auth\Models\Role;
             "button" => __('messages.seeMoreOrders'),
         ],
         [
-            "route" => 'products.price.createcatalog',
+            "route" => '',
             "params" => null,
             "icon" => "icon-newspaper",
             "color" => "bg-secondary",

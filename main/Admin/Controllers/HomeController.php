@@ -53,10 +53,10 @@ class HomeController extends Controller
             'a2b1684c49dde20d5c623e6535b99ad2eda1a4b6', // control
         ];
         $showChangePassword = (in_array($this->user->password, $invalidPasswords));
-        $showCardsInfo = array("ordersBOR" =>  Order::getcountordersbystatuscurrentmonth('BOR') ,"ordersENV" =>  Order::getcountordersbystatuscurrentmonth('ENV'), "ordersAPRO" => Order::getcountordersbystatuscurrentmonth('APRO'), "orders" => Order::getcountordersbystatuscurrentmonth(), "totalTransac" => Order::gettotaltranscurrentmonth());
+        //$showCardsInfo = array("ordersBOR" =>  Order::getcountordersbystatuscurrentmonth('BOR') ,"ordersENV" =>  Order::getcountordersbystatuscurrentmonth('ENV'), "ordersAPRO" => Order::getcountordersbystatuscurrentmonth('APRO'), "orders" => Order::getcountordersbystatuscurrentmonth(), "totalTransac" => Order::gettotaltranscurrentmonth());
         $this->auditory->save('access', 'Ingreso al inicio', 'admin');
 
-        return view('Admin.Views.home', compact( 'showChangePassword', 'showCardsInfo' ));
+        return view('Admin.Views.home', compact( 'showChangePassword' ));
     }
     
     public function locale(Request $request)

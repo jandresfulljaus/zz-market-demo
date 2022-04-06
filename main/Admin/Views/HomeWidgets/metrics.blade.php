@@ -4,25 +4,25 @@
             "icon" => "icon-file-plus",
             "color" => "bg-primary",
             "text" => __('messages.countOrdersDraft'),
-            "value" => $showCardsInfo['ordersBOR']
+            "value" => '0'
         ],
         [
             "icon" => "icon-file-upload",
             "color" => "bg-primary",
             "text" => __('messages.countOrdersUnderReviewHome'),
-            "value" => $showCardsInfo['ordersENV']
+            "value" => '0'
         ],
         [
             "icon" => "icon-file-check",
             "color" => "bg-primary",
             "text" => __('messages.countOrdersApprovedHome'),
-            "value" => $showCardsInfo['ordersAPRO']
+            "value" => '0'
         ],
         [
             "icon" => "icon-file-empty",
             "color" => "bg-primary",
             "text" => __('messages.countOrdersHome'),
-            "value" => $showCardsInfo['orders']
+            "value" => '0'
         ],
     ];
 @endphp

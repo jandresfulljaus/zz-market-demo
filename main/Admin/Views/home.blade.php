@@ -7,7 +7,7 @@
         @endif
 
         <div class="col-sm-12 col-lg-12">
-            @include('Admin.Views.HomeWidgets.metrics', $showCardsInfo)
+            @include('Admin.Views.HomeWidgets.metrics')
         </div>
 
         <div class="col-sm-12 col-lg-12">

@@ -28,7 +28,7 @@
                     </li>
                 @endcan
 
-                @can('access', 'products.products.list')
+                {{-- @can('access', 'products.products.list')
                     <li class="nav-item">
                         <a title="{{__('messages.productsSidebarHome')}}" id="products.products.list" class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}" href="{{ route('products.products.home')}}">
                             <i class="icon-store2"></i>
@@ -44,9 +44,9 @@
                             <span id="messageNotifications" class="sidebar-badge"></span>
                         </a>
                     </li>
-                @endcan
+                @endcan --}}
 
-                @can('access', 'orders.orders.list')
+                {{-- @can('access', 'orders.orders.list')
                     <li class="nav-item">
                         <a title="{{__('messages.ordersOrders')}}" id="orders.orders.list" class="nav-link {{ request()->routeIs('orders.*') ? 'active' : '' }}" href="{{ route('orders.orders.home')}}">
                             <i class="icon-pencil7"></i>
@@ -54,7 +54,7 @@
                             <span id="messageNotifications" class="sidebar-badge"></span>
                         </a>
                     </li>
-                @endcan
+                @endcan --}}
 
                 @can('access', 'auth.organizations.list')
                     <li class="nav-item-header">
